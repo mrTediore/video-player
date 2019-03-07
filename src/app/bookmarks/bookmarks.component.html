@@ -1,0 +1,22 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-11">
+      <h2>Bookmarks</h2>
+      <div class="list-group">
+        <div class="list-group-item" *ngIf="bookmarks.length==0">
+            <p id="empty" class="list-group-item-text">No bookmark</p>
+        </div>
+        <button class="list-group-item"
+                *ngFor="let bookmark of bookmarks,let i = index"
+                (click)="onLoadBookmark(bookmark.url)">
+          <span class="list-group-item-text">{{bookmark.url}}</span>
+          <button class="btn btn-danger"
+                  (click)="onSuppressBookmark(i)"
+                  style="margin-left: 1em;">
+            <i class="fas fa-trash"></i>
+          </button>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

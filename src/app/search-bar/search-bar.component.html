@@ -1,0 +1,16 @@
+
+<div class="container-fluid" style="padding:1em;">
+  <div class="row">
+    <div class="center col-md-11">
+      <label for="searchForm">
+        Insert Youtube url
+      </label>
+      <form (ngSubmit)='onSubmit(f)' #f="ngForm" class="input-group" id="searchForm">
+        <input type="text" id="link" class="form-control" name="link" placeholder="Search for..." ngModel required>
+        <span class="input-group-btn">
+          <button class="btn btn-primary" type="submit" [disabled]="f.invalid">Search</button>
+        </span>
+      </form>
+    </div>
+  </div>
+</div>

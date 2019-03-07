@@ -1,0 +1,22 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-11">
+      <h2>History</h2>
+      <button class="btn btn-danger"
+              (click)="onCleanHistory()"
+              *ngIf="links.length > 0">
+        <i class="fas fa-trash"></i> Clean History
+      </button>
+      <div class="list-group">
+        <div class="list-group-item" *ngIf="links.length==0">
+          <p id="empty" class="list-group-item-text">Empty history</p>
+        </div>
+        <button class="list-group-item"
+                *ngFor="let link of links.slice().reverse()"
+                (click)="onWatchAgain(link.url)">
+          <p class="list-group-item-text">{{link.url}}</p>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
