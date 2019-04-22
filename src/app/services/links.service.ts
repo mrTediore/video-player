@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 
 
 @Injectable()
@@ -7,8 +7,8 @@ export class LinksService {
 
   links = new Array<any>();
   bookmarks = new Array<any>();
-  linksSubject = new Subject<any[]>();
-  bookmarksSubject = new Subject<any[]>();
+  linksSubject = new BehaviorSubject(this.links);
+  bookmarksSubject = new BehaviorSubject(this.bookmarks);
 
   emitLinks(){
     this.linksSubject.next(this.links);

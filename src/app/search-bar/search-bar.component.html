@@ -5,7 +5,7 @@
       <label for="searchForm">
         Insert Youtube url
       </label>
-      <form (ngSubmit)='onSubmit(f)' #f="ngForm" class="input-group" id="searchForm">
+      <form (ngSubmit)='onSubmit(f); f.reset()' #f="ngForm" class="input-group" id="searchForm">
         <input type="text" id="link" class="form-control" name="link" placeholder="Search for..." ngModel required>
         <span class="input-group-btn">
           <button class="btn btn-primary" type="submit" [disabled]="f.invalid">Search</button>

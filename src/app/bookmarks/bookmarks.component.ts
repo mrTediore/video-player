@@ -33,7 +33,7 @@ export class BookmarksComponent implements OnInit {
         this.bookmarks = bookmarks;
       }
     );
-    this.linksService.emitBookmarks();
+    //this.linksService.emitBookmarks();
   }
 
   ngOnDestroy(){

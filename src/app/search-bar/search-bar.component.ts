@@ -29,6 +29,7 @@ export class SearchBarComponent implements OnInit {
       const videoUrl = this.linksService.getUrlFromId(videoId);
       this.linksService.addNewLink(videoUrl);
       this.onSearch(videoId);
+      form.value['link'] = '';
       console.log(videoUrl);
     }else{
       console.log('error');

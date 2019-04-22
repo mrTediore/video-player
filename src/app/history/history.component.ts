@@ -34,7 +34,12 @@ export class HistoryComponent implements OnInit {
         this.links = links;
       }
     );
-    this.linksService.emitLinks();
+    this.linksService.linksSubject.subscribe(
+      (links:String[]) => {
+        this.links = links;
+      }
+    )
+    //this.linksService.emitLinks();
   }
 
   ngOnDestroy(){
